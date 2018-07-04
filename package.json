@@ -1,0 +1,67 @@
+{
+  "name": "cms-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Wojciech Bakłażec",
+  "license": "MIT",
+  "private": false,
+  "description": "Simple cms system - react.js / node.js",
+  "scripts": {
+    "start": "webpack-dev-server --config config/webpack.config.js",
+    "server": "npm run server:build && NODE_ENV=\"production\" node ./config/server.js",
+    "clean": "rm -rf ./dist/*",
+    "lint-hook": "eslint ./app/ ./*.js -f table --ext .js --ext .jsx",
+    "lint": "npm run lint-hook",
+    "hook-add": "prepush install",
+    "hook-remove": "prepush remove",
+    "precommit": "lint-staged",
+    "prepush": "npm run lint-hook"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
+    "jest": "^23.3.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "webpack": "^4.14.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "history": "^4.7.2",
+    "i18next": "^11.3.3",
+    "i18next-browser-languagedetector": "^2.2.0",
+    "i18next-xhr-backend": "^1.5.1",
+    "immutable": "^3.8.2",
+    "kakapo": "^3.3.3",
+    "material-ui": "^0.20.1",
+    "moment": "^2.22.2",
+    "normalizr": "^3.2.4",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
+    "react-i18next": "^7.7.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^3.0.1",
+    "styled-components": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:baqui/cms-node.git"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,md}": [
+      "prettier --single-quote --trailing-comma none --write",
+      "git add"
+    ]
+  }
+}

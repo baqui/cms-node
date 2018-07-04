@@ -1,0 +1,7 @@
+node_modules/
+.directory
+dist/
+yarn-error.log
+
+#Ignore vs code
+.vscode/
