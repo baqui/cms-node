@@ -18,6 +18,9 @@ module.exports = {
     publicPath: '/',
     filename: '[name]-[hash].js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   devServer: {
     headers: { 'Access-Control-Allow-Origin': '*' },
     contentBase: './dist',
