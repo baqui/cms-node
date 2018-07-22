@@ -5,6 +5,7 @@ import { NavBar } from './styled-components';
 const Navigation = ({ className, children }) => (
   <div className={className}>
     <NavBar>Navigaion</NavBar>
+    {children}
   </div>
 );
 
