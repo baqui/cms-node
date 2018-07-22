@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavBar } from './styled-components';
+import { NavBar, BrandLogo } from './styled-components';
+import logoUrl from '../../assets/logo.png';
 
-const Navigation = ({ className, children }) => (
+const Navigation = ({ className }) => (
   <div className={className}>
-    <NavBar>Navigaion</NavBar>
-    {children}
+    <NavBar>
+      <BrandLogo logoUrl={logoUrl} link="google.com" />
+    </NavBar>
   </div>
 );
 
