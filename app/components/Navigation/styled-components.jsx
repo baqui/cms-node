@@ -3,10 +3,9 @@ import styled from 'styled-components';
 
 export const NavBar = styled.nav`
   width: 100%;
-  position: fixed;
-  top: 0;
+  display: inline-block;
   z-index: 22;
-  height: ${p => (p.height ? p.height : '56px')};
+  height: 100%;
   background: ${p => (p.background ? p.background : 'white')};
   box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.32);
 `;

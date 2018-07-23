@@ -14,5 +14,8 @@ const Navigation = ({ className }) => (
 export default styled(Navigation)`
   display: inline-block;
   width: 100%;
-  border-bottom: 1px solid crimson;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  z-index: 30;
 `;
