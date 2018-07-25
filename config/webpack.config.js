@@ -11,7 +11,8 @@ const PATHS = {
 
 module.exports = {
   entry: {
-    'main-index': './app/bundles/main-index.jsx'
+    'main-index': './app/bundles/main-index.jsx',
+    'cms/cms-index': './app/bundles/cms-index.jsx'
   },
   output: {
     path: PATHS.build,
@@ -31,6 +32,10 @@ module.exports = {
         {
           from: /^\/$/,
           to: '/index.html'
+        },
+        {
+          from: /^\/administration-panel/,
+          to: '/cms/index.html'
         }
       ]
     },
@@ -93,6 +98,15 @@ module.exports = {
       template: 'app/index.html',
       chunks: ['main-index'],
       filename: 'index.html',
+      buildTimestamp: Date.now(),
+      inject: true,
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      title: 'CMS-NODE cms panel',
+      template: 'app/index.html',
+      chunks: ['cms/cms-index'],
+      filename: 'cms/index.html',
       buildTimestamp: Date.now(),
       inject: true,
       hash: true
